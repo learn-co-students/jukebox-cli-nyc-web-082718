@@ -27,22 +27,37 @@ def list(songs)
 end
 
 def play(songs)
-  binding.pry
   puts "Please enter a song name or number"
   request = gets.chomp
-  if request.is_a? String
-    songs.each do |song|
-      if song.downcase == request.downcase
-        puts "Playing #{song}"
-      end
-    end
+
+  if (1..9).include?(request.to_i)
+    puts "Playing #{songs[request.to_i - 1]}"
+  elsif song = songs.find {|song| song.downcase == request.downcase}
+    puts "Playing #{song}"
   else
-    if request <= songs.length
-      puts "Playing #{songs[request - 1]}"
-    end
+    puts "Invalid input, please try again"
   end
 end
 
 def exit_jukebox
   puts "Goodbye"
+end
+
+def run(songs)
+  help
+  loop do
+    puts "Please enter a command:"
+    command = gets.chomp
+
+    if command.downcase == "list"
+      list(songs)
+    elsif command.downcase == "play"
+      play(songs)
+    elsif command.downcase == "help"
+      help
+    elsif command.downcase == "exit"
+      exit_jukebox
+      break
+    end
+  end
 end
