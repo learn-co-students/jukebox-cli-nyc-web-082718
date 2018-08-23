@@ -31,11 +31,10 @@ def help
 end
 
 def play(songs)
-  binding.pry
+  x = 0
   "Please enter a song name or number:"
-  song_choice = gets.chomp
-
-  if song_choice.to_i
+  song_choice = gets.strip
+  if song_choice.to_i > 0
     index = (song_choice.to_i) - 1
     if index > 9
       puts "Invalid input, please try again"
@@ -43,12 +42,18 @@ def play(songs)
       puts songs[index]
     end
 
-  elsif songs.include?(song_choice)
-    puts song_choice
-
-  else
+  elsif
+    while x < songs.length
+      if songs[x].include?(song_choice)
+        puts songs[x]
+        return
+      else
+         x += 1
+      end
+    end
     puts "Invalid input, please try again"
-  end
+
+   end
 
 end
 
@@ -77,3 +82,5 @@ def run(arg)
     return
   end
 end
+
+play(songs)
