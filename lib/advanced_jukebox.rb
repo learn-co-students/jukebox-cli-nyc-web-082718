@@ -1,16 +1,15 @@
 #Here is the song hash you will be working with. Each key is a song name and each value is the location of it's mp3 file.
 #make sure to edit the value of each key to replace < path to this directory >
 #with the correct path to this directory on your computer
-require 'pry'
 
 my_songs = {
-  "Go Go GO" => '/Users/alexaulum/Development/labs/jukebox-cli-nyc-web-082718/audio/Emerald-Park/01.mp3',
-  "LiberTeens" => '/Users/alexaulum/Development/labs/jukebox-cli-nyc-web-082718/audio/Emerald-Park/02.mp3',
-  "Hamburg" =>  '/Users/alexaulum/Development/labs/jukebox-cli-nyc-web-082718/audio/Emerald-Park/03.mp3',
-  "Guiding Light" => '/Users/alexaulum/Development/labs/jukebox-cli-nyc-web-082718/audio/Emerald-Park/04.mp3',
-  "Wolf" => '/Users/alexaulum/Development/labs/jukebox-cli-nyc-web-082718/audio/Emerald-Park/05.mp3',
-  "Blue" => '/Users/alexaulum/Development/labs/jukebox-cli-nyc-web-082718/audio/Emerald-Park/06.mp3',
-  "Graduation Failed" => '/Users/alexaulum/Development/labs/jukebox-cli-nyc-web-082718/audio/Emerald-Park/07.mp3'
+  "Go Go GO" => '../audio/Emerald-Park/01.mp3',
+  "LiberTeens" => '../audio/Emerald-Park/02.mp3',
+  "Hamburg" =>  '../audio/Emerald-Park/03.mp3',
+  "Guiding Light" => '../audio/Emerald-Park/04.mp3',
+  "Wolf" => '../audio/Emerald-Park/05.mp3',
+  "Blue" => '../audio/Emerald-Park/06.mp3',
+  "Graduation Failed" => '../audio/Emerald-Park/07.mp3'
 }
 
 def help
